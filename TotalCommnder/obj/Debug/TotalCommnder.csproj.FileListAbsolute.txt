@@ -1,0 +1,12 @@
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\bin\Debug\TotalCommnder.exe.config
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\bin\Debug\TotalCommnder.exe
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\bin\Debug\TotalCommnder.pdb
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.csprojAssemblyReference.cache
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.Form1.resources
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.Properties.Resources.resources
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.TCPanel.resources
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.csproj.GenerateResource.cache
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.csproj.CoreCompileInputs.cache
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.exe
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.pdb
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.form_file_path_change.resources
