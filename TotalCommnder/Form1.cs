@@ -12,14 +12,18 @@ namespace TotalCommnder
 {
     public partial class Form1 : Form, IView
     {
-        public event Action move;
+        public event Action Move;
+        public event Action Delete;
+        public event Action NewFolder;
+        public event Action Copy;
+        public event Action ShowDialog;
 
         public Form1()
         {
             InitializeComponent();
-            //tcPanel1.CurrentPath = "C:\\";
-            //tcPanel1.Drives = System.IO.Directory.GetLogicalDrives();
+         
         }
+
 
         public IPanelView PanelLeft
         {
@@ -38,21 +42,26 @@ namespace TotalCommnder
             }
         }
 
-        private void TcPanel1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtMove_Click(object sender, EventArgs e)
         {
-            form_file_path_change form = new form_file_path_change();
-            form.ShowDialog();
-           // move();
+            Move();
+            //form.Directories = tcPanel1.get
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void BtDelete_Click(object sender, EventArgs e)
         {
+            Delete?.Invoke();
+        }
 
+        private void BtCopy_Click(object sender, EventArgs e)
+        {
+            Copy?.Invoke();
+        }
+
+        private void BtNewFolder_Click(object sender, EventArgs e)
+        {
+            NewFolder?.Invoke();
         }
     }
 }

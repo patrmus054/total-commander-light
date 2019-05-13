@@ -9,4 +9,11 @@ D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.
 D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.csproj.CoreCompileInputs.cache
 D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.exe
 D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.pdb
-D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.form_file_path_change.resources
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.form_move_item.resources
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.form_new_folder.resources
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\bin\Debug\MySql.Data.dll
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\bin\Debug\Google.Protobuf.dll
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\bin\Debug\BouncyCastle.Crypto.dll
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\bin\Debug\MySql.Data.xml
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.csproj.CopyComplete
+D:\C# - projects\TCommander\TotalCommnder\TotalCommnder\obj\Debug\TotalCommnder.form_copy_item.resources

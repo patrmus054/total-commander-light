@@ -11,8 +11,10 @@ namespace TotalCommnder
         string CurrentPath { get; set; }
         string[] Drives { set; }
         string GetCurrentDrive { get; }
+        
         List<DirectoryElement> DirectoryElements { set; }
         void AddListBoxItem(object item);
+        DirectoryElement GetListBoxItem { get; }
         void ClearListBoxItems();
         
         event Action LoadDrivesList;
@@ -21,6 +23,8 @@ namespace TotalCommnder
         event Action pathTextChanged;
         event Action listViewItemClicked;
         event Action updatePathText;
+        event Action arrayClicked;
+
 
     }
 }

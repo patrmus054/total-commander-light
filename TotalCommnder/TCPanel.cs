@@ -19,6 +19,7 @@ namespace TotalCommnder
         public event Action pathTextChanged;
         public event Action listViewItemClicked;
         public event Action updatePathText;
+        public event Action arrayClicked;
 
         public TCPanel()
         {
@@ -38,8 +39,12 @@ namespace TotalCommnder
         public string[] Drives {
             set
             {
-                cbDirveList.Items.Clear();
-                cbDirveList.Items.AddRange(value);
+                if (value != null)
+                {
+                    cbDirveList.Items.Clear();
+                    cbDirveList.Items.AddRange(value);
+                    cbDirveList.SelectedIndex = 1;
+                }
             }
 
             get
@@ -67,6 +72,7 @@ namespace TotalCommnder
             }
         }
 
+
         private void TCPanel_Load(object sender, EventArgs e)
         {
             Drives = System.IO.Directory.GetLogicalDrives();
@@ -86,7 +92,6 @@ namespace TotalCommnder
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listViewItemClicked?.Invoke();
             updatePathText?.Invoke();
         }
 
@@ -101,5 +106,21 @@ namespace TotalCommnder
             listBox.Items.Clear();
         }
 
+        private void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            listViewItemClicked?.Invoke();
+        }
+        DirectoryElement IPanelView.GetListBoxItem
+        {
+            get
+            {
+                return listBox.SelectedItem as DirectoryElement;
+            }
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            arrayClicked();
+        }
     }
 }

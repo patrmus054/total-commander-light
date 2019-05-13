@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,18 +54,33 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_file_path_change.cs">
+    <Compile Include="form_copy_item.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_file_path_change.Designer.cs">
-      <DependentUpon>form_file_path_change.cs</DependentUpon>
+    <Compile Include="form_copy_item.Designer.cs">
+      <DependentUpon>form_copy_item.cs</DependentUpon>
     </Compile>
-    <Compile Include="IFrameMoveItem.cs" />
-    <Compile Include="IPanelView.cs" />
-    <Compile Include="IView.cs" />
-    <Compile Include="Model.cs" />
-    <Compile Include="PanelPresenter.cs" />
-    <Compile Include="Presenter.cs" />
+    <Compile Include="form_move_item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_move_item.Designer.cs">
+      <DependentUpon>form_move_item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_new_folder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_new_folder.Designer.cs">
+      <DependentUpon>form_new_folder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\FrameCopyPresenter.cs" />
+    <Compile Include="Views\IFrameCopyItem.cs" />
+    <Compile Include="Views\IFrameMoveItem.cs" />
+    <Compile Include="Views\IFrameNewFolder.cs" />
+    <Compile Include="Views\IPanelView.cs" />
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Presenters\PanelPresenter.cs" />
+    <Compile Include="Presenters\Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TCPanel.cs">
@@ -76,8 +92,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_file_path_change.resx">
-      <DependentUpon>form_file_path_change.cs</DependentUpon>
+    <EmbeddedResource Include="form_copy_item.resx">
+      <DependentUpon>form_copy_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_move_item.resx">
+      <DependentUpon>form_move_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_new_folder.resx">
+      <DependentUpon>form_new_folder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,5 +126,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

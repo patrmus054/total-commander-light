@@ -20,7 +20,8 @@ namespace TotalCommnder
 
         public override string ToString()
         {
-            return $"{ ((Type == DirectoryElementType.DIRECTORY) ? "<DIR> " : "      ") } { Name }";
+            int index = Name.LastIndexOf("\\")+1;
+            return $"{ ((Type == DirectoryElementType.DIRECTORY) ? "<DIR> " : " ") } { Name.Substring(index) }";
         }
     }
 }

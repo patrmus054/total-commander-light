@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace TotalCommnder
 {
-    public interface IView
+    public interface IFrameMoveItem
     {
-        IPanelView PanelLeft { get; }
-        IPanelView PanelRight { get; }
-        event Action move;
-
+        List<DirectoryElement> Directories { set; }
     }
 }
