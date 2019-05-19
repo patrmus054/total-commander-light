@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotalCommnder
 {
-    interface IFrameNewFolder
+    public interface IFrameNewFolder
     {
         List<DirectoryElement> Directories { set; }
         string GetNewFolderName { get; }

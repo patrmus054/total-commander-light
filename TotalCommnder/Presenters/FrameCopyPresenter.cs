@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotalCommnder.Presenters
 {
-    class FrameCopyPresenter
+    public class FrameCopyPresenter
     {
         IFrameCopyItem view;
         Model model;
@@ -22,6 +22,14 @@ namespace TotalCommnder.Presenters
         private void Commit()
         {
             selectedItem = view.GetSelectedItem;
+        }
+        public void showDialog()
+        {
+            ((form_copy_item)view).ShowDialog();
+        }
+        public void hideDialog()
+        {
+            ((form_copy_item)view).Hide();
         }
 
 

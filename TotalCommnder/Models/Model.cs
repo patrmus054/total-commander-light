@@ -10,7 +10,7 @@ using TotalCommnder.Presenters;
 
 namespace TotalCommnder
 {
-    class Model
+    public class Model
     {
         public List<DirectoryElement> LoadPathFiles(string path)
         {

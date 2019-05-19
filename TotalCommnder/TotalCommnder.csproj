@@ -72,7 +72,10 @@
     <Compile Include="form_new_folder.Designer.cs">
       <DependentUpon>form_new_folder.cs</DependentUpon>
     </Compile>
+    <Compile Include="IObserver.cs" />
     <Compile Include="Presenters\FrameCopyPresenter.cs" />
+    <Compile Include="Presenters\FrameMovePresenter.cs" />
+    <Compile Include="Presenters\FrameNewFolderPresenter.cs" />
     <Compile Include="Views\IFrameCopyItem.cs" />
     <Compile Include="Views\IFrameMoveItem.cs" />
     <Compile Include="Views\IFrameNewFolder.cs" />
