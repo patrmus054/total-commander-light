@@ -37,16 +37,16 @@
             // 
             // tbNewFolderName
             // 
-            this.tbNewFolderName.Location = new System.Drawing.Point(25, 53);
+            this.tbNewFolderName.Location = new System.Drawing.Point(12, 54);
             this.tbNewFolderName.Name = "tbNewFolderName";
-            this.tbNewFolderName.Size = new System.Drawing.Size(374, 22);
+            this.tbNewFolderName.Size = new System.Drawing.Size(458, 22);
             this.tbNewFolderName.TabIndex = 0;
             this.tbNewFolderName.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 34);
+            this.label1.Location = new System.Drawing.Point(12, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 1;
@@ -55,7 +55,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 123);
+            this.label2.Location = new System.Drawing.Point(12, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 17);
             this.label2.TabIndex = 2;
@@ -64,9 +64,9 @@
             // cbDestinationPath
             // 
             this.cbDestinationPath.FormattingEnabled = true;
-            this.cbDestinationPath.Location = new System.Drawing.Point(25, 142);
+            this.cbDestinationPath.Location = new System.Drawing.Point(12, 134);
             this.cbDestinationPath.Name = "cbDestinationPath";
-            this.cbDestinationPath.Size = new System.Drawing.Size(374, 24);
+            this.cbDestinationPath.Size = new System.Drawing.Size(458, 24);
             this.cbDestinationPath.TabIndex = 3;
             // 
             // btCommitFormNewFolder
@@ -74,7 +74,7 @@
             this.btCommitFormNewFolder.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btCommitFormNewFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btCommitFormNewFolder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btCommitFormNewFolder.Location = new System.Drawing.Point(317, 191);
+            this.btCommitFormNewFolder.Location = new System.Drawing.Point(365, 178);
             this.btCommitFormNewFolder.Name = "btCommitFormNewFolder";
             this.btCommitFormNewFolder.Size = new System.Drawing.Size(105, 63);
             this.btCommitFormNewFolder.TabIndex = 5;
@@ -87,7 +87,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(439, 271);
+            this.ClientSize = new System.Drawing.Size(482, 253);
             this.Controls.Add(this.btCommitFormNewFolder);
             this.Controls.Add(this.cbDestinationPath);
             this.Controls.Add(this.label2);
@@ -100,6 +100,7 @@
             this.Name = "form_new_folder";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);
             this.PerformLayout();
 

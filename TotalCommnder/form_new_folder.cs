@@ -53,6 +53,9 @@ namespace TotalCommnder
                 return cbDestinationPath.Text;
             }
         }
+
+        public event Action call;
+
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -60,7 +63,7 @@ namespace TotalCommnder
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            call?.Invoke();
         }
     }
 }

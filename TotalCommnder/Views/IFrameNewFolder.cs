@@ -11,5 +11,6 @@ namespace TotalCommnder
         List<DirectoryElement> Directories { set; }
         string GetNewFolderName { get; }
         string GetNewFolderDestination { get; }
+        event Action call;
     }
 }

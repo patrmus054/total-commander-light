@@ -39,7 +39,7 @@
             this.cbDestination.FormattingEnabled = true;
             this.cbDestination.Location = new System.Drawing.Point(14, 30);
             this.cbDestination.Name = "cbDestination";
-            this.cbDestination.Size = new System.Drawing.Size(471, 24);
+            this.cbDestination.Size = new System.Drawing.Size(456, 24);
             this.cbDestination.TabIndex = 0;
             this.cbDestination.SelectedIndexChanged += new System.EventHandler(this.CbDestination_SelectedIndexChanged);
             // 
@@ -54,9 +54,9 @@
             // 
             // btCommit
             // 
-            this.btCommit.Location = new System.Drawing.Point(401, 73);
+            this.btCommit.Location = new System.Drawing.Point(373, 60);
             this.btCommit.Name = "btCommit";
-            this.btCommit.Size = new System.Drawing.Size(84, 66);
+            this.btCommit.Size = new System.Drawing.Size(84, 31);
             this.btCommit.TabIndex = 2;
             this.btCommit.Text = "Commit";
             this.btCommit.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(519, 151);
+            this.ClientSize = new System.Drawing.Size(482, 103);
             this.Controls.Add(this.btCommit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbDestination);
@@ -77,6 +77,7 @@
             this.Name = "form_move_item";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);
             this.PerformLayout();
 

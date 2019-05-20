@@ -9,5 +9,7 @@ namespace TotalCommnder
     public interface IFrameMoveItem
     {
         List<DirectoryElement> Directories { set; }
+        string getCurrentElement { get; }
+        event Action call;
     }
 }

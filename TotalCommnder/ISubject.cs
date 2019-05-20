@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TotalCommnder
 {
-    public interface IObserver
+    public interface ISubject
     {
-        void callMe(string msg);
+        void registerObserver(IObserver o);
+        void removeObserver(IObserver o);
+        void notifyAllObservers();
     }
 }

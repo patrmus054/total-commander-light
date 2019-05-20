@@ -6,22 +6,27 @@ using System.Threading.Tasks;
 
 namespace TotalCommnder.Presenters
 {
-    public class FrameCopyPresenter
+    public class FrameCopyPresenter: ISubject
     {
         IFrameCopyItem view;
         Model model;
-        public static DirectoryElement selectedItem;
+        //public static DirectoryElement selectedItem;
+        List<IObserver> observers;
+        string msg;
 
         public FrameCopyPresenter(IFrameCopyItem view, Model model)
         {
+            observers = new List<IObserver>();
             this.view = view;
             this.model = model;
             view.Commit += Commit;
+            view.Directories = model.LoadPathfolders("D:\\");
         }
 
         private void Commit()
         {
-            selectedItem = view.GetSelectedItem;
+            msg = view.GetSelectedItem.Name;
+            notifyAllObservers();
         }
         public void showDialog()
         {
@@ -32,6 +37,22 @@ namespace TotalCommnder.Presenters
             ((form_copy_item)view).Hide();
         }
 
+        public void registerObserver(IObserver o)
+        {
+            observers.Add(o);
+        }
 
+        public void removeObserver(IObserver o)
+        {
+            observers.Remove(o);
+        }
+
+        public void notifyAllObservers()
+        {
+            foreach(var observer in observers)
+            {
+                observer.callMe(msg);
+            }
+        }
     }
 }

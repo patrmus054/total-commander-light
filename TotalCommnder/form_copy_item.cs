@@ -43,7 +43,6 @@ namespace TotalCommnder
         {
             get
             {
-                //return (DirectoryElement)cbSourceFormCopy.SelectedItem;
                 return new DirectoryElement(DirectoryElementType.DIRECTORY, cbSourceFormCopy.SelectedItem.ToString());
             }
         }
@@ -57,7 +56,8 @@ namespace TotalCommnder
 
         private void bt_commit_Click(object sender, EventArgs e)
         {
-            FrameCopyPresenter.selectedItem = GetSelectedItem;
+            
+            Commit?.Invoke();
             this.Close();
         }
     }

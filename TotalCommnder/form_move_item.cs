@@ -38,6 +38,12 @@ namespace TotalCommnder
             }
         }
 
+
+        public event Action call;
+
+        public string getCurrentElement => cbDestination.SelectedItem.ToString();
+
+
         private void CbDestination_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -45,7 +51,7 @@ namespace TotalCommnder
 
         private void BtCommit_Click(object sender, EventArgs e)
         {
-            //Move();
+            call?.Invoke();
         }
     }
 }

@@ -73,6 +73,7 @@
       <DependentUpon>form_new_folder.cs</DependentUpon>
     </Compile>
     <Compile Include="IObserver.cs" />
+    <Compile Include="ISubject.cs" />
     <Compile Include="Presenters\FrameCopyPresenter.cs" />
     <Compile Include="Presenters\FrameMovePresenter.cs" />
     <Compile Include="Presenters\FrameNewFolderPresenter.cs" />

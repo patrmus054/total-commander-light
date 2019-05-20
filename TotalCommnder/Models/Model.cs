@@ -59,130 +59,87 @@ namespace TotalCommnder
             return folders;
         }
 
-        public void Delete(DirectoryElement name)
+        internal void Move(DirectoryElement source, string msg)
         {
-            string path = name.Name;
-
-            if(File.Exists(path))
+            int index = source.Name.LastIndexOf("\\");
+            string leftName = source.Name.Substring(index);
+            try
             {
-                File.Delete(path);
-            }
-            else
-            {
-                Directory.Delete(path);
-            }
-            
-
-        }
-        public void Copy(DirectoryElement left, string right)
-        {
-            if (left == null)
-            {
-                form_copy_item form = new form_copy_item();
-                form.StartPosition = FormStartPosition.CenterParent;
-                form.Directories = LoadPathfolders("D:\\");
-                form.ShowDialog();
-                FrameCopyPresenter frameCopyPresenter;
-                if (FrameCopyPresenter.selectedItem.Type == DirectoryElementType.FILE) { File.Copy(FrameCopyPresenter.selectedItem.Name, right); }
+                if (source.Type == DirectoryElementType.FILE)
+                {
+                    File.Move(source.Name, msg);
+                }
                 else
                 {
-                    foreach (string dirPath in Directory.GetDirectories(FrameCopyPresenter.selectedItem.Name, "*", SearchOption.AllDirectories))
-                        Directory.CreateDirectory(dirPath.Replace(FrameCopyPresenter.selectedItem.Name, right));
-
-                    //Copy all the files & Replaces any files with the same name
-                    foreach (string newPath in Directory.GetFiles(FrameCopyPresenter.selectedItem.Name, "*.*", SearchOption.AllDirectories))
-                        File.Copy(newPath, newPath.Replace(FrameCopyPresenter.selectedItem.Name, right), true);
+                    
+                    Directory.Move(source.Name, msg);
+                   
                 }
-
             }
-            else
+            catch (Exception e)
             {
-                
-                if (left.Type == DirectoryElementType.FILE) { File.Copy(left.Name, right); }
-                else {
-                    foreach (string dirPath in Directory.GetDirectories(left.Name, "*", SearchOption.AllDirectories))
-                    Directory.CreateDirectory(dirPath.Replace(left.Name, right));
-
-                    //Copy all the files & Replaces any files with the same name
-                    foreach (string newPath in Directory.GetFiles(left.Name, "*.*", SearchOption.AllDirectories))
-                        File.Copy(newPath, newPath.Replace(left.Name, right), true);
-                }
-                
-                //int index = left.Name.LastIndexOf("\\");
-                //string leftName = left.Name.Substring(index);
-                //try
-                //{
-                //    if (left.Type == DirectoryElementType.FILE)
-                //    {
-                //        File.Copy(left.Name, right.Name + leftName);
-                //    }
-                //    else
-                //    {
-                //        if (right.Type == DirectoryElementType.DIRECTORY)
-                //        {
-                //            Directory.Move(left.Name, right.Name);
-                //        }
-                //    }
-                //}
-                //catch (Exception e)
-                //{
-                //    Console.WriteLine(e);
-                //}
+                MessageBox.Show(e.ToString());
             }
         }
         public void Move(DirectoryElement left, DirectoryElement right)
         {
-            if (left == null || right == null)
+            int index = left.Name.LastIndexOf("\\");
+            string leftName = left.Name.Substring(index);
+            try
             {
-                form_move_item form = new form_move_item();
-                form.Directories = LoadPathfolders("D:\\");
-                form.StartPosition = FormStartPosition.CenterParent;
-                form.ShowDialog();
-            }
-            else
-            {
-                int index = left.Name.LastIndexOf("\\");
-                string leftName = left.Name.Substring(index);
-                try
+                if (left.Type == DirectoryElementType.FILE)
                 {
-                    if (left.Type == DirectoryElementType.FILE)
+                    File.Move(left.Name, right.Name + leftName);
+                }
+                else
+                {
+                    if (right.Type == DirectoryElementType.DIRECTORY)
                     {
-                        File.Move(left.Name, right.Name+leftName);
-                    }
-                    else
-                    {
-                        if (right.Type == DirectoryElementType.DIRECTORY)
-                        {
-                            Directory.Move(left.Name, right.Name);
-                        }
+                        Directory.Move(left.Name, right.Name);
                     }
                 }
-                catch (Exception e)
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        public void Delete(DirectoryElement name)
+        {
+            if(name != null) { 
+                string path = name.Name;
+
+                if(File.Exists(path))
                 {
-                    Console.WriteLine(e);
+                    File.Delete(path);
+                }
+                else
+                {
+                Directory.Delete(path);
                 }
             }
         }
-        public void NewFolder(DirectoryElement left, string path)
+        public void Copy(DirectoryElement left, string right)
         {
-            form_new_folder form = new form_new_folder();
-            if(path == "")
-            {
-                form.Directories = LoadPathfolders("D:\\");
+            //TODO: case file exist exeption handling 
+            if (left.Type == DirectoryElementType.FILE) { File.Copy(left.Name, $"{right}\\{Path.GetFileName(left.Name)}"); }
+            else {
+                foreach (string dirPath in Directory.GetDirectories(left.Name, "*", SearchOption.AllDirectories))
+                Directory.CreateDirectory(dirPath.Replace(left.Name, right));
+
+                //Copy all the files & Replaces any files with the same name
+                foreach (string newPath in Directory.GetFiles(left.Name, "*.*", SearchOption.AllDirectories))
+                    File.Copy(newPath, newPath.Replace(left.Name, right), true);
             }
-            else
-            {
-                form.Directories = LoadPathfolders(path);
-            }
-            form.StartPosition = FormStartPosition.CenterParent;
-            form.ShowDialog();
-            if (form.GetNewFolderName != null && form.GetNewFolderDestination != null)
-            {
-                if (Directory.Exists(form.GetNewFolderDestination))
+        }
+
+        public void NewFolder(string path)
+        {
+                if (!Directory.Exists(path) && path != null)
                 {
-                    Directory.CreateDirectory($"{form.GetNewFolderDestination}\\{form.GetNewFolderName}");
+                    Directory.CreateDirectory(path);
                 }
-            }
         }
 
         public string previousPath(string path)
